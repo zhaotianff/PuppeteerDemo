@@ -21,12 +21,31 @@ namespace WindowsFormsApp1
         }
 
         private async void button1_Click(object sender, EventArgs e)
-        {
+        {                      
             await new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
             browser = await Puppeteer.LaunchAsync(new LaunchOptions
             {
                 Headless = true
             });
+
+            //如果await new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);执行不成功
+            //可以手动访问https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/，下载Chromium浏览器，并解压到指定位置
+            //再通过以下代码初始化
+            /*
+             * LaunchOptions options = new LaunchOptions();
+            options.Headless = true;
+            options.DefaultViewport = null;
+            //忽略证书错误
+            options.IgnoreHTTPSErrors = true;
+
+            //chromePath就是下载的Chromium浏览器解压的位置          
+             options.ExecutablePath = chromePath;
+
+            browser = await Puppeteer.LaunchAsync(options);
+            */
+
+
+
             var page = await browser.NewPageAsync();
             await page.GoToAsync(this.textBox1.Text);
             var html = await page.GetContentAsync();
