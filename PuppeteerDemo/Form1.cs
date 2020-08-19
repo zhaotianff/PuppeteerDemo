@@ -68,5 +68,15 @@ namespace WindowsFormsApp1
             await page.PdfAsync(path, pdfOptions);
             MessageBox.Show($"PDF已经保存至{path}");
         }
+
+        private async void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //dispose browser
+            if (browser != null)
+            {
+                await browser.CloseAsync();
+                browser.Dispose();
+            }
+        }
     }
 }

@@ -38,34 +38,34 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 13);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(776, 424);
+            this.richTextBox1.Size = new System.Drawing.Size(776, 392);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(47, 452);
+            this.textBox1.Location = new System.Drawing.Point(47, 417);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(491, 20);
+            this.textBox1.Size = new System.Drawing.Size(491, 21);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "https://www.baidu.com";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 455);
+            this.label1.Location = new System.Drawing.Point(12, 420);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "网址";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(544, 450);
+            this.button1.Location = new System.Drawing.Point(544, 415);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "访问";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,9 +73,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(625, 449);
+            this.button2.Location = new System.Drawing.Point(625, 414);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
             this.button2.Text = "页面截图";
             this.button2.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(706, 449);
+            this.button3.Location = new System.Drawing.Point(706, 414);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 21);
             this.button3.TabIndex = 5;
             this.button3.Text = "保存PDF";
             this.button3.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -105,6 +105,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
