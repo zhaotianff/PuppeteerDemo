@@ -21,8 +21,16 @@ namespace WindowsFormsApp1
         }
 
         private async void button1_Click(object sender, EventArgs e)
-        {                      
-            await new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
+        {
+            //默认会从https://storage.googleapis.com下载
+            //如果没有科学上网，无法访问
+            //await new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
+
+            //可以通过下面的方式配置为从华为云镜像下载
+            BrowserFetcherOptions browserFetcherOptions = new BrowserFetcherOptions();
+            browserFetcherOptions.Host = "https://repo.huaweicloud.com";
+            await new BrowserFetcher(browserFetcherOptions).DownloadAsync(BrowserFetcher.DefaultRevision);
+
             browser = await Puppeteer.LaunchAsync(new LaunchOptions
             {
                 Headless = true
@@ -43,6 +51,8 @@ namespace WindowsFormsApp1
 
             browser = await Puppeteer.LaunchAsync(options);
             */
+
+            
 
 
 
